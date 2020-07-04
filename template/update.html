@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+      <h1>Update</h1>
+  </head>
+  <body>
+    <form method="post" action="/update/{{ .todo.ID }}">
+        <p>Tag<input type="text" name="tag" value="{{.todo.Tag}}"></p>
+        <p>Content<input type="text" name="content" value="{{.todo.Content}}"></p>
+        <p>TimeLimit<input type="text" name="timelimit" value="{{.todo.TimeLimit}}"></p>
+        <p><input type="submit" value="Send"></p>
+    </form>
+  </body>
+</html>

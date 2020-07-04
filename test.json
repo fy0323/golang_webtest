@@ -1,0 +1,8 @@
+{
+  "user": "root",
+  "password": "<enter your password>",
+  "host": "<enter the DB endpoint>",
+  "port": "",
+  "dbname": "todo",
+  "sslmode": "disable"
+}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <h1>delete check</h1>
+    </head>
+    <body>
+	<table border="1">
+            <tr><th>Tag</th><th>Content</th><th>TimeLimit</th></tr>
+            <tr><td>{{ .todo.Tag }}</td><td>{{ .todo.Content }}</td><td>{{ .todo.TimeLimit }}</td></tr>
+        </table>
+        <form method="post" action="/delete/{{ .todo.ID }}">
+            <p><input type="submit" value="delete"></p>
+            <p><a href="/">back</a></p>
+        </form>
+    </body>
+</html>
