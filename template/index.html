@@ -1,28 +1,20 @@
 <!doctype html>
 <html>
-  <head>
-      <h1>ToDo</h1>
-  </head>
-  <body>
-      <form method="post" action="new">
-          <p>tag
-              <input type="text" name="tag">
-          </p>
-          <p>content
-              <input type="text" name="content">
-          </p>
-          <p>timelimit
-              <input type="text" name="timelimit">
-          </p>
-          <p>
-              <input type="submit" value="Send">
-          </p>
-      </form>
-      <table border="1">
-          <tr><th>Tag</th><th>Content</th><th>TimeLimit</th><th>update</th><th>delete</th></tr>
-          {{ range .todos }}
-          <tr><td>{{ .Tag }}</td><td>{{ .Content }}</td><td>{{ .TimeLimit }}</td><td><a href="/update/{{ .ID }}">update</a></td><td><a href="/delete/{{ .ID }}">delete</a></td></tr>
-          {{ end }}
-      </table>
-  </body>
+    <head>
+        <h1>ToDo</h1>
+    </head>
+    <body>
+        <form method="post" action="new">
+            <p>tag<input type="text" name="tag"></p>
+            <p>content<input type="text" name="content"></p>
+            <p>timelimit<input type="text" name="timelimit"></p>
+            <p><input type="submit" value="Send"></p>
+        </form>
+        <table border="1">
+            <tr><th>Tag</th><th>Content</th><th>TimeLimit</th><th>update</th><th>delete</th></tr>
+            {{ range .todos }}
+            <tr><td>{{ .Tag }}</td><td>{{ .Content }}</td><td>{{ .TimeLimit }}</td><td><a href="/update/{{ .ID }}">update</a></td><td><a href="/delete/{{ .ID }}">delete</a></td></tr>
+            {{ end }}
+        </table>
+    </body>
 </html>
