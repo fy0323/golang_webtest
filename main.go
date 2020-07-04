@@ -20,7 +20,6 @@ type Todo struct {
 }
 
 // database connect
-
 type DbConfig struct {
         User     string `json:"user"`
         Password string `json:"password"`
@@ -33,7 +32,6 @@ type DbConfig struct {
 var db *gorm.DB
 
 // connect db
-
 func (d DbConfig) Connect() string {
         return fmt.Sprintf("user=%s password=%s host=%s port=%s dbname=%s sslmode=%s", d.User, d.Password, d.Host, d.Port, d.Dbname, d.Sslmode)
 }
@@ -57,7 +55,6 @@ func db_connect() *gorm.DB {
         return db
 }
 
-
 // init db
 func db_init(db *gorm.DB) {
 	if err := db.DB().Ping(); err != nil {
@@ -65,7 +62,6 @@ func db_init(db *gorm.DB) {
 	}
 
 	db.AutoMigrate(&Todo{})
-
 	//defer db.Close()
 }
 
@@ -104,7 +100,6 @@ func db_update(db *gorm.DB, id int, tag string, content string, timelimit string
 	//defer db.Close()
 }
 
-
 // delete
 func db_delete(db *gorm.DB, id int) {
 	var todo Todo
@@ -139,7 +134,6 @@ func main() {
 		ctx.Redirect(302, "/")
 	})
 
-
 	//update
 	r.GET("/update/:id", func(ctx *gin.Context){
 		param := ctx.Param("id")
@@ -164,7 +158,6 @@ func main() {
 
 		ctx.Redirect(302, "/")
 	})
-
 
 	// delete
 	r.GET("/delete/:id", func(ctx *gin.Context) {
